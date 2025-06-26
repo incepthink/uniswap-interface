@@ -38,20 +38,20 @@ export const useTabsContent = (): TabsSection[] => {
         },
       ],
     },
-    {
-      title: t('common.explore'),
-      href: '/explore',
-      isActive: pathname.startsWith('/explore') || pathname.startsWith('/nfts'),
-      items: [
-        { label: t('common.tokens'), href: '/explore/tokens', internal: true },
-        { label: t('common.pools'), href: '/explore/pools', internal: true },
-        {
-          label: t('common.transactions'),
-          href: '/explore/transactions',
-          internal: true,
-        },
-      ],
-    },
+    // {
+    //   title: t('common.explore'),
+    //   href: '/explore',
+    //   isActive: pathname.startsWith('/explore') || pathname.startsWith('/nfts'),
+    //   items: [
+    //     { label: t('common.tokens'), href: '/explore/tokens', internal: true },
+    //     { label: t('common.pools'), href: '/explore/pools', internal: true },
+    //     {
+    //       label: t('common.transactions'),
+    //       href: '/explore/transactions',
+    //       internal: true,
+    //     },
+    //   ],
+    // },
     // {
     //   title: t('common.pool'),
     //   href: '/positions',
