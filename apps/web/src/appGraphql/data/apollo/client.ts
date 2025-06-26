@@ -15,7 +15,7 @@ export const apolloClient = new ApolloClient({
   link: from([datadogLink, httpLink]),
   headers: {
     'Content-Type': 'application/json',
-    Origin: 'https://app.uniswap.org',
+    Origin: 'https://spot.aggtrade.xyz/',
   },
   cache: setupSharedApolloCache(),
   defaultOptions: {
