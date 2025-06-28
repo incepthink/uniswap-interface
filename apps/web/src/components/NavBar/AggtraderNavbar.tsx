@@ -17,7 +17,7 @@ function NavLink({ href, children, isActive }: NavLinkProps) {
         padding: '4px 8px',
         fontSize: '1.25rem',
         textDecoration: 'none',
-        color: '#000',
+        color: `${href === '#' ? '#00ffe9' : 'white'}`,
         transition: 'color 0.2s',
         ...(isActive ? {} : {}),
       }}
@@ -25,7 +25,7 @@ function NavLink({ href, children, isActive }: NavLinkProps) {
         ;(e.currentTarget as HTMLElement).style.color = '#00ffe9'
       }}
       onMouseOut={(e) => {
-        ;(e.currentTarget as HTMLElement).style.color = '#000'
+        ;(e.currentTarget as HTMLElement).style.color = `${href === '#' ? '#00ffe9' : 'white'}`
       }}
     >
       {children}
@@ -66,22 +66,27 @@ export default function AggtraderNavbar() {
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: '16px 40px',
-        background: '#fff',
+        backgroundColor: 'rgb(5, 14, 25)',
         boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
         zIndex: 1000,
       }}
     >
-      <h2
-        style={{
-          fontSize: '1.5rem',
-          fontWeight: 600,
-          margin: 0,
-          cursor: 'pointer',
-          color: 'black',
-        }}
-      >
-        AggTrade
-      </h2>
+      <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+        <div style={{ width: '40px' }}>
+          <img src="/images/logos/aggtrade.png" alt="" style={{ width: '100%', objectFit: 'cover' }} />
+        </div>
+        <h2
+          style={{
+            fontSize: '1.5rem',
+            fontWeight: 600,
+            margin: 0,
+            cursor: 'pointer',
+            color: 'white',
+          }}
+        >
+          AggTrade
+        </h2>
+      </div>
       <ul
         style={{
           listStyle: 'none',

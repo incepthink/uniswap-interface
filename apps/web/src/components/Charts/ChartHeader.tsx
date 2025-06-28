@@ -68,7 +68,7 @@ interface HeaderValueDisplayProps {
   value?: number | ReactElement
   /** Used to override default format NumberType (FiatTokenStats) */
   valueFormatterType?: FiatNumberType
-  symbol?: string
+  symbol?: any
   fdv?: number
   vol?: number
 }
@@ -109,9 +109,9 @@ function HeaderValueDisplay({
     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
         <div style={{ width: '40px' }}>
-          <img src="/images/logos/Arbitrum_Logo.png" alt="" style={{ width: '100%', objectFit: 'cover' }} />
+          <img src={symbol.logo} alt="" style={{ width: '100%', objectFit: 'cover' }} />
         </div>
-        <p style={{ fontSize: '20px' }}>{symbol} - </p>
+        <p style={{ fontSize: '20px' }}>{symbol.symbol} - </p>
         <Text variant="heading3" {...EllipsisTamaguiStyle}>
           {convertFiatAmountFormatted(value, valueFormatterType)}
         </Text>
@@ -151,7 +151,7 @@ function HeaderTimeDisplay({ time, timePlaceholder }: HeaderTimeDisplayProps) {
 interface ChartHeaderProps extends HeaderValueDisplayProps, HeaderTimeDisplayProps {
   protocolData?: ChartHeaderProtocolInfo[]
   additionalFields?: ReactNode
-  symbol?: string
+  symbol?: any
   fdv?: number
   vol?: number
 }

@@ -219,7 +219,7 @@ interface PriceChartProps {
   height: number
   data: PriceChartData[]
   stale: boolean
-  symbol?: string
+  symbol?: any
   fdv?: number
   vol?: number
 }

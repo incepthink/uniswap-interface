@@ -308,33 +308,33 @@ function UniversalSwapFlow({
 
   const TOKENS: TokenInfo[] = [
     {
-      symbol: 'UNI',
+      symbol: 'WETH',
       // conventional placeholder for native ETH (use 0x0 if your lib expects that)
-      address: '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984',
+      address: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
       decimals: 18,
-      name: 'Uniswap',
-      logo: '/images/logos/Arbitrum_Logo.png',
+      name: 'Wrapped Ether',
+      logo: '/images/logos/weth.png',
     },
     {
       symbol: 'WBTC',
       address: '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
       decimals: 8,
       name: 'Wrapped Bitcoin',
-      logo: '/images/logos/Arbitrum_Logo.png',
+      logo: '/images/logos/wbtc.png',
     },
     {
       symbol: 'MATIC',
       address: '0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0',
       decimals: 18,
       name: 'Matic Token',
-      logo: '/images/logos/Arbitrum_Logo.png',
+      logo: '/images/logos/matic.png',
     },
     {
       symbol: 'rETH',
       address: '0xae78736cd615f374d3085123a210448e74fc6393',
       decimals: 18,
       name: 'Rocket Pool ETH',
-      logo: '/images/logos/Arbitrum_Logo.png',
+      logo: '/images/logos/reth.png',
     },
   ]
 
@@ -460,7 +460,7 @@ function UniversalSwapFlow({
       </div>
       <div className="newSwap">
         <div style={{ width: '70%' }} className="swap-main">
-          <ChartSection symbol={selected.symbol} fdv={fdv} vol={vol} />
+          <ChartSection symbol={selected} fdv={fdv} vol={vol} />
         </div>
         <div className="swap-main">
           <Flex>

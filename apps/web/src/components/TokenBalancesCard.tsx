@@ -3,39 +3,32 @@ import { useState } from 'react'
 
 const rows = [
   {
-    symbol: 'ETH',
-    balance: '6.82K',
-    price: '$0.0258',
+    symbol: 'WETH',
+    balance: '0.002',
+    price: '$2428',
     value: '$18.452',
-    icon: '/icons/eth.svg', // replace with real paths
+    icon: '/images/logos/weth.png', // replace with real paths
   },
   {
-    symbol: 'ALPACA',
-    balance: '52.82K',
-    price: '$5.26',
+    symbol: 'WBTC',
+    balance: '0.000002',
+    price: '$107222',
     value: '$14.650',
-    icon: '/icons/alpaca.svg',
+    icon: '/images/logos/wbtc.png',
   },
   {
-    symbol: 'SUI',
+    symbol: 'MATIC',
     balance: '356.58',
     price: '$0.0058',
     value: '$3.54',
-    icon: '/icons/sui.svg',
+    icon: '/images/logos/matic.png',
   },
   {
-    symbol: 'TRX',
+    symbol: 'rETH',
     balance: '548.0',
     price: '$0.0215',
     value: '$0.452',
-    icon: '/icons/trx.svg',
-  },
-  {
-    symbol: 'WIF',
-    balance: '485.05',
-    price: '$0.0288',
-    value: '$1.452',
-    icon: '/icons/wif.svg',
+    icon: '/images/logos/reth.png',
   },
 ]
 

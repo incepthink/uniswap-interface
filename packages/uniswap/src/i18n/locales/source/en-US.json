@@ -2058,7 +2058,7 @@
   "testnet.modal.swapDeepLink.title.toTestnetMode": "Enable testnet mode",
   "testnet.unsupported": "This functionality is not supported in testnet mode.",
   "themeToggle.theme": "Theme",
-  "title.buySellTradeEthereum": "Buy, sell & trade Ethereum and other top tokens on Uniswap",
+  "title.buySellTradeEthereum": "AggTrade - Swap",
   "title.createGovernanceOn": "Create a new governance proposal on Uniswap",
   "title.createGovernanceTo": "Create a new governance proposal to be voted on by UNI holders. UNI tokens represent voting shares in Uniswap governance.",
   "title.earnFees": "Earn fees when others swap on Uniswap by adding tokens to liquidity pools.",
