@@ -343,7 +343,7 @@ function OneInchSwap({ address, isConnected }: SwapProps) {
             cursor: isSwapDisabled ? 'not-allowed' : 'pointer',
           }}
         >
-          {isSending ? 'Sending...' : isConfirming ? 'Confirming...' : 'Swap'}
+          {isConnected ? (isSending ? 'Sending...' : isConfirming ? 'Confirming...' : 'Swap') : 'Connect Wallet'}
         </div>
       </div>
     </>

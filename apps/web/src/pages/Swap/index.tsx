@@ -460,7 +460,13 @@ function UniversalSwapFlow({
         <div style={{ width: '70%' }} className="swap-main">
           <ChartSection symbol={selected} fdv={fdv} vol={vol} />
         </div>
-        <div className="swap-main">{address && <OneInchSwap address={address} isConnected={isConnected} />}</div>
+        <div className="swap-main">
+          {address ? (
+            <OneInchSwap address={address} isConnected={isConnected} />
+          ) : (
+            <OneInchSwap address={`0x${''}`} isConnected={false} />
+          )}
+        </div>
       </div>
       <div style={{ marginTop: '20px' }}>
         <TokenBalancesCard />
