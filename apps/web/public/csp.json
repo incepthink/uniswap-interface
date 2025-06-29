@@ -43,6 +43,7 @@
     "blob:",
     "data:",
     "http://localhost:5000/",
+    "https://api.covalenthq.com/",
     "https://aggtrade-backend.onrender.com/",
     "https://api.1inch.dev/swap/v6.1/1/",
     "https://cors-anywhere.herokuapp.com/",

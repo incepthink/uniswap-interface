@@ -1,5 +1,7 @@
 // TokenBalancesCard.jsx
-import { useState } from 'react'
+import axios from 'axios'
+import { useAccount } from 'hooks/useAccount'
+import { useEffect, useState } from 'react'
 
 const rows = [
   {
@@ -34,6 +36,34 @@ const rows = [
 
 export default function TokenBalancesCard() {
   const [suspicious, setSuspicious] = useState(false)
+  const [items, setItems] = useState<any[]>([])
+  const { address } = useAccount()
+
+  async function getSpotBalance(address: string) {
+    try {
+      const apiKey = process.env.REACT_APP_COVALENT_KEY
+
+      if (!apiKey) {
+        console.error('Covalent API key missing')
+      }
+
+      const url = `https://api.covalenthq.com/v1/1/address/${address}/balances_v3/?no-nft-fetch=true&key=${apiKey}`
+
+      const { data } = await axios.get(url)
+      const items = data?.data?.items || []
+      console.log('ITEMS::', items)
+      setItems(items)
+    } catch (err) {
+      console.error('Error fetching Covalent balances:', err)
+      setItems([])
+    }
+  }
+
+  useEffect(() => {
+    if (address) {
+      getSpotBalance(address)
+    }
+  }, [address])
 
   return (
     <>
@@ -188,19 +218,25 @@ export default function TokenBalancesCard() {
                 </tr>
               </thead>
               <tbody>
-                {rows.map((row) => (
-                  <tr key={row.symbol} className="tb-row">
-                    <td>
-                      <div className="tb-token">
-                        <img src={row.icon} alt={row.symbol} />
-                        {row.symbol}
-                      </div>
-                    </td>
-                    <td>{row.balance}</td>
-                    <td>{row.price}</td>
-                    <td>{row.value}</td>
-                  </tr>
-                ))}
+                {items.length !== 0 ? (
+                  items.map((item, i) => {
+                    return (
+                      <tr key={i} className="tb-row">
+                        <td>
+                          <div className="tb-token">
+                            <img src={item.logo_url} alt={item.contract_ticker_symbol} />
+                            {item.contract_ticker_symbol}
+                          </div>
+                        </td>
+                        <td>{(Number(item.balance) * 10 ** -item.contract_decimals).toFixed(5)}</td>
+                        <td>{item.quote_rate}</td>
+                        <td>{item.pretty_quote}</td>
+                      </tr>
+                    )
+                  })
+                ) : (
+                  <div></div>
+                )}
               </tbody>
             </table>
           </div>
