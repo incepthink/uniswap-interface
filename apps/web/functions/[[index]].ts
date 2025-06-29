@@ -14,9 +14,9 @@ function doesMatchPath(path: string): boolean {
 
 export const onRequest: PagesFunction = async ({ request, next }) => {
   const requestURL = new URL(request.url)
-  const imageUri = requestURL.origin + '/images/1200x630_Rich_Link_Preview_Image.png'
+  const imageUri = requestURL.origin + '/images/aggtrade.png'
   const data = {
-    title: 'Uniswap Interface',
+    title: 'AggTrade Swap',
     image: imageUri,
     url: request.url,
     description:
